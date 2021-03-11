@@ -41,12 +41,4 @@ class User < ApplicationRecord
         self.favorites.exists?(micropost_id: micropost.id)
     end
     
-    def like(micropost)
-    favorites.find_or_create_by(micropost_id: micropost.id)
-    end
-    
-    def like?(micropost)
-        self.likes.include?(micropost)
-    end
-    
-end
+end    
